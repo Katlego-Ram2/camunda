@@ -1,0 +1,131 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Profile</h1>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+            <!-- Widget: user widget style 2 -->
+            <div class="card card-widget widget-user-2">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-info">
+                <div class="widget-user-image">
+                  <img class="img-circle elevation-2" src="../../../assets/img/default-profile.png" alt="User Avatar">
+                </div>
+                <!-- /.widget-user-image -->
+                <h3 class="widget-user-username">{{user.firstname}}</h3>
+                <h5 class="widget-user-desc"><b>Eku-Camunda</b>User</h5>
+              </div>
+              <div class="card-footer p-0">
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Cell <span class="float-right badge bg-primary">0728813185</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Email <span class="float-right badge bg-info">{{user.emailAddress}}</span>
+                    </a>
+                  </li>
+                  
+
+                </ul>
+              </div>
+            </div>
+            <!-- /.widget-user -->
+
+            <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">About Me</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <!-- <strong><i class="fas fa-book mr-1"></i> Education</strong>
+  
+                  <p class="text-muted">
+                    B.S. in Computer Science from the University of Tennessee at Knoxville
+                  </p>
+  
+                  <hr> -->
+  
+                  <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+  
+                  <p class="text-muted">525 BERYL STREET, THE STEWARDS EXT 19, THE STEWARDS, BENONI, 1501</p>
+  
+                  <!-- <hr> -->
+  
+                  <!-- <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+  
+                  <p class="text-muted">
+                    <span class="tag tag-danger">UI Design</span>
+                    <span class="tag tag-success">Coding</span>
+                    <span class="tag tag-info">Javascript</span>
+                    <span class="tag tag-warning">PHP</span>
+                    <span class="tag tag-primary">Node.js</span>
+                  </p> -->
+  
+                  <hr>
+  
+                  <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+  
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                </div>
+                <!-- /.card-body -->
+              </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header p-2">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link active" href="#" data-toggle="tab">Activity</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li> -->
+                    </ul>
+                </div><!-- /.card-header -->
+
+                <div class="card-body">
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="activity">   
+                            <!-- Post -->
+                            <div class="post">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Activity</th>
+                                                <th>Date/Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Login on Eku-Camunda</td>
+                                                <td>17 Sep, 2023 09:00am</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Edit user profile</td>
+                                                <td>17 Sep, 2023 09:05am</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.post -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

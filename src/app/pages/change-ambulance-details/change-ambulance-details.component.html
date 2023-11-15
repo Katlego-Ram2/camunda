@@ -1,0 +1,58 @@
+<br>
+<form [formGroup]="ambulanceForm">
+  <h2>Change Ambulance Details</h2><br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="First Name" aria-label="First Name" formControlName="firstName"
+      [ngClass]="{'error': ambulanceForm.get('firstName').invalid && ambulanceForm.get('firstName').touched}" required>
+    <div *ngIf="ambulanceForm.get('firstName').hasError('required') && ambulanceForm.get('firstName').touched" class="error-message">
+      First Name is required.
+    </div>
+  </div><br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Last Name" aria-label="Last Name" formControlName="lastName"
+      [ngClass]="{'error': ambulanceForm.get('lastName').invalid && ambulanceForm.get('lastName').touched}" required>
+    <div *ngIf="ambulanceForm.get('lastName').hasError('required') && ambulanceForm.get('lastName').touched" class="error-message">
+      Last Name is required.
+    </div>
+  </div><br>
+
+  <div class="col">
+    <input type="tel" class="form-control" placeholder="Contact Number" aria-label="Contact Number" formControlName="contactNumber"
+      [ngClass]="{'error': ambulanceForm.get('contactNumber').invalid && ambulanceForm.get('contactNumber').touched}" required>
+    <div *ngIf="ambulanceForm.get('contactNumber').hasError('required') && ambulanceForm.get('contactNumber').touched" class="error-message">
+      Contact Number is required.
+    </div>
+  </div><br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Ambulance Model" aria-label="Ambulance Model" formControlName="ambulanceModel"
+      [ngClass]="{'error': ambulanceForm.get('ambulanceModel').invalid && ambulanceForm.get('ambulanceModel').touched}" required>
+    <div *ngIf="ambulanceForm.get('ambulanceModel').hasError('required') && ambulanceForm.get('ambulanceModel').touched" class="error-message">
+      Ambulance Model is required.
+    </div>
+  </div><br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Ambulance Color" aria-label="Ambulance Color" formControlName="ambulanceColor"
+      [ngClass]="{'error': ambulanceForm.get('ambulanceColor').invalid && ambulanceForm.get('ambulanceColor').touched}" required>
+    <div *ngIf="ambulanceForm.get('ambulanceColor').hasError('required') && ambulanceForm.get('ambulanceColor').touched" class="error-message">
+      Ambulance Color is required.
+    </div>
+  </div><br>
+
+  <div class="col">
+    <input type="text" class="form-control" placeholder="Ambulance Registration Number" aria-label="Ambulance registration number"
+      formControlName="registrationNumber" [ngClass]="{'error': ambulanceForm.get('registrationNumber').invalid && ambulanceForm.get('registrationNumber').touched}" required>
+    <div *ngIf="ambulanceForm.get('registrationNumber').hasError('required') && ambulanceForm.get('registrationNumber').touched"
+      class="error-message">
+      Ambulance Registration is required.
+    </div>
+  </div><br>
+
+  <div class="d-grid gap-2 d-md-block" class="btn1">
+    <button class="btn btn-primary" type="button" (click)="onSubmit()">Submit</button>
+  </div>
+</form>
+

@@ -1,0 +1,11 @@
+<app-header class="main-header navbar navbar-expand navbar-orange navbar-dark"></app-header>
+
+<app-menu-sidebar class="sidebar-dark-primary" id="aside_menu"></app-menu-sidebar>
+
+<div class="content-wrapper">
+    <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>
+
+<div id="sidebar-overlay" (click)="onToggleMenuSidebar()"></div>
