@@ -45,13 +45,13 @@
                       <tbody>
                         <tr *ngFor="let instance of instances">
                             
-                            <td>{{ instance.id }}</td>
+                            <!-- <td><a [routerLink]="['/logincident', instance.task, instance.taskId]">{{ instance.process_instance_id }}</a></td> -->
                          
-  
+                            <td><a href="{{ instance.task + '/' + instance.taskId}}">{{ instance.process_instance_id }}</a></td> 
                            <td>{{ instance.active === 1 ? 'Yes' : 'No' }}</td>
                            
                             <td>
-                                <div class="col-md-3"><button type="button" class="btn btn-secondary" (click)="suspendInstance(instance.id)" >Stop</button></div>
+                                <div class="col-md-3"><button type="button" class="btn btn-secondary" (click)="suspendInstance(instance.id)" >Suspend</button></div>
                             </td>
                             <td>
                                 <div class="col-md-3"><button type="button" class="btn btn-primary" (click)="restartInstance(instance.id)">Restart</button></div>

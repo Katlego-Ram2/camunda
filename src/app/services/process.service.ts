@@ -51,7 +51,7 @@ export class ProcessService {
 
 startProcess(key: string): Observable<string> {
   
-  const startUrl = `http://10.2.2.90:9023/camunda/rest/process/{http:@@10.1.2.138:8080@engine-rest@process-definition@key@${key}@start}`;
+  const startUrl = `http://10.2.2.90:9023/camunda/rest/process/{${key}}`;
 
   const headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
