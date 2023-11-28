@@ -20,13 +20,6 @@ import { ChangeAmbulanceDetailsComponent } from '@pages/change-ambulance-details
 import { LogIncidentComponent } from '@pages/log-incident/log-incident.component';
 import { AmbulanceDetailsComponent } from '@pages/ambulance-details/ambulance-details.component';
 
-
-
-
-
-
-
-
 const routes: Routes = [
     {
         path: '', pathMatch:"full",component:WelcomeComponent
@@ -60,36 +53,17 @@ const routes: Routes = [
                 component:ProcessInstancesComponent
             },
             {
-                path:'changeDetails',component:ChangeAmbulanceDetailsComponent
+                path:'changeDetails/:taskId',component:ChangeAmbulanceDetailsComponent
             },
             {
-                path:'logincident',component:LogIncidentComponent
+                path:'logIncident/:taskId',component:LogIncidentComponent
             },
             {
-                path:'ambulancedetails',component:AmbulanceDetailsComponent
-            },
-        
-            
-           
-            
-         
-            
-          
-          
-           
-            
-           
-           
-            
-          
+                path:'ambulanceDetails/:taskId',component:AmbulanceDetailsComponent
+            }, 
           
         ]
     },
-
-    
-    
-
-  
  
     {path: '**', redirectTo: ''}
 ];

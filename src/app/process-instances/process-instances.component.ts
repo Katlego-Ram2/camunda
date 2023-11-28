@@ -27,11 +27,13 @@ export class ProcessInstancesComponent implements OnInit {
 
     this.httpClient.get(apiUrl).subscribe((data: any[]) => {
       this.instances = data;
+      console.log(this.instances);
     });
   }
+
   deleteInstance(instanceId: string) {
 
-  const apiUrl = 'http://10.1.2.138:8080/engine-rest/process-instance/delete';
+  const apiUrl = 'http://10.2.2.90:9023/camunda/rest/process/delete';
 
   const deletePayload = {
     deleteReason: 'aReason',
@@ -40,7 +42,7 @@ export class ProcessInstancesComponent implements OnInit {
     skipSubprocesses: true
   };
 
-  this.httpClient.post(apiUrl, deletePayload).subscribe(
+  this.httpClient.post(apiUrl, deletePayload, {responseType : 'text'}).subscribe(
     (response) => {
       
       console.log('Instance deleted successfully', response);
@@ -56,13 +58,13 @@ export class ProcessInstancesComponent implements OnInit {
 }
 suspendInstance(instanceId: string) {
  
-  const apiUrl = 'http://10.2.2.90:9023/camunda/rest/process/suspended';
+  const apiUrl = 'http://10.2.2.90:9023/camunda/rest/process/suspend';
   const suspendPayload = {
-    processInstanceIds: [instanceId],
+    processInstanceId: instanceId,
     suspended: true
   };
 
-  this.httpClient.post(apiUrl, suspendPayload).subscribe(
+  this.httpClient.post(apiUrl, suspendPayload, {responseType:'text'}).subscribe(
     (response) => {
       console.log('Instance suspended successfully', response);
       // Optionally, you can reload the instances after suspension
@@ -93,9 +95,9 @@ suspendInstance(instanceId: string) {
 
 restartInstance(instanceId: string) {
   
-  const activateUrl = 'http://10.2.2.90:9023/camunda/rest/process/suspended';
+  const activateUrl = 'http://10.2.2.90:9023/camunda/rest/process/suspend';
   const activatePayload = {
-    processInstanceIds: [instanceId],
+    processInstanceId: instanceId,
     suspended: false
   };
 

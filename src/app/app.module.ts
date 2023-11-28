@@ -1,5 +1,4 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from '@/app-routing.module';
 import {AppComponent} from './app.component';
@@ -29,8 +28,7 @@ import { IAMComponent } from './iam/iam.component';
 import { ChangeAmbulanceDetailsComponent } from '@pages/change-ambulance-details/change-ambulance-details.component';
 import { LogIncidentComponent } from '@pages/log-incident/log-incident.component';
 import { AmbulanceDetailsComponent } from '@pages/ambulance-details/ambulance-details.component';
-
-
+import { NgModule } from '@angular/core';
 
 registerLocaleData(localeEn, 'en-EN');
 
@@ -53,9 +51,6 @@ registerLocaleData(localeEn, 'en-EN');
         ChangeAmbulanceDetailsComponent ,
         LogIncidentComponent,
         AmbulanceDetailsComponent,
-        
-     
-    
     ],
     imports: [
         ProfabricComponentsModule,
