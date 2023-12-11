@@ -46,7 +46,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GetProcessDataService } from '@services/get-process-data.service';
 import { PostProcessDataService } from '@services/post-process-data.service';
 import { ToastrService } from 'ngx-toastr';
@@ -69,7 +69,7 @@ export class ChangeAmbulanceDetailsComponent{
   a: any = {};
   postData: any;
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private http: HttpClient, private route: ActivatedRoute, private processData: GetProcessDataService, postData: PostProcessDataService) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService, private http: HttpClient, private route: ActivatedRoute, private processData: GetProcessDataService, postData: PostProcessDataService,private router:Router) {
     this.ambulanceForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -135,6 +135,9 @@ export class ChangeAmbulanceDetailsComponent{
         next: (response) => {
           if(response){
             console.log("Success!", response);
+            window.location.reload();
+            this.router.navigate(["/process-instance/:id/:descriptionprocess-instance/Ambulance:7:70658821-851a-11ee-9dca-00090ffe0001/Ambulance"]);
+          
           }else{
             console.log("Error!");
           }

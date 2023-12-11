@@ -1,0 +1,65 @@
+<div class="content-header">
+  <div class="container-fluid">
+      <div class="row mb-2">
+          <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Eku-Camunda Dashboard</h1>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-8">
+              <div class="card" style="max-height: 680px; overflow-y: auto;">
+                  <div class="card-header">
+                      <h3 class="card-title">Camunda Process</h3>
+                      <div class="card-tools">
+                          <div class="input-group input-group-sm" style="width: 150px;">
+                            
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="card-body table-responsive p-0">
+                      <div class="process-container">
+                          <table class="table table-hover text-nowrap">
+                              <thead>
+                                  <tr>
+                                      <th>Process Name</th>
+                                      <th>Version</th>
+                                      <th>Number Of Instances</th>
+                                      <th>Action</th>
+                                  </tr>
+                              </thead>
+                          
+
+                              <tbody data-spy="scroll" data-target=".navbar" data-offset="50">
+                                  <tr *ngFor="let item of data" [ngClass]="{'faded-row': item.instances === 0}">
+                                      <td *ngIf="item.instances > 0" (click)="navigateToProcessInstance(item.description, item.id, item.instances)"
+                                          (mouseover)="addHoverClass($event)"
+                                          (mouseout)="removeHoverClass($event)" [class.blue-and-underlined]="item.instances > 0" [class.no-instances]="item.instances === 0">
+                                          {{ item.description }}
+                                      </td>
+                                      <td *ngIf="item.instances === 0">{{ item.description }}</td>
+                                      <td>{{ item.version }}</td>
+                                      <td>
+                                          <span class="message" *ngIf="item.instances === 0; else numberAvailable">No instances available</span>
+                                          <ng-template #numberAvailable>{{ item.instances }}</ng-template>
+                                      </td>
+                                      <td>
+                                          <!-- Assuming 'item' has a 'key' property -->
+                                    <button type="button" class="btn btn-primary" (click)="startProcess(item.key, item.description)">Start Process</button>
+
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

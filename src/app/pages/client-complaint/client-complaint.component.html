@@ -1,86 +1,211 @@
-<br>
-<h2>Client Complaint</h2><br>
-<form>
- <div class="row">
-    <div class="col">
-    <input type="text" class="form-control" placeholder="Customer Care Centre" aria-label="Customer Care Centre">
-    </div><br>
-    <div class="col">
-    <input type="text" class="form-control" placeholder="Account No" aria-label="Account No">
-    </div>
-    </div><br>
-    
-    <div class="row">
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Stand No" aria-label="Stand No">
-    </div><br>
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Street No And Name" aria-label="Street No And Name">
-    </div>
-    </div><br>
-    
-    
-    
-    <div class="row">
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Client Complaint No" aria-label="Client Complaint No">
-    </div><br>
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Township" aria-label="Township">
-    </div>
-    </div><br>
-    
-    <div class="row">
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Initials/Last Name" aria-label="Initials/Last Name">
-    </div><br>
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Title" aria-label="Title">
-    </div>
-    </div><br>
-    
-      
-    <div class="row">
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Address" aria-label="Address">
-    </div><br>
-    <div class="col">
-    <input type="number" class="form-control" placeholder="Code" aria-label="Code">
-    </div>
-    </div><br>
-    
-    
-      
-    <div class="row">
-    <div class="col">
-    <input type="text" class="form-control" placeholder="Area" aria-label="Area">
-    </div>
 
-    <div class="col">
-        <input type="text" class="form-control" placeholder="Email " aria-label="Email" >
+<div class="container">
+
+    <form [formGroup]="clientComplaintForm" (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+        <div class="card">
+            <div class="card-body">
+     <h3>Client Complaint</h3> <br>
+      
+
+     
+      <div class="row">
+      
+        <div class="col">
+          <select id="customerCareCentre" class="form-control" formControlName="customerCareCentre"
+                  [ngClass]="{'is-invalid': clientComplaintForm.get('customerCareCentre').invalid && clientComplaintForm.get('customerCareCentre').touched}">
+            <option value="" disabled selected>Select Customer Care Centre</option>
+            <option value="careCentre1">Alberton</option>
+            <option value="careCentre2">Boksburg</option>
+            
+          </select>
+          <div *ngIf="clientComplaintForm.get('customerCareCentre').hasError('required') && clientComplaintForm.get('customerCareCentre').touched" class="invalid-feedback">
+            Customer Care Centre is required.
+          </div>
         </div>
-    </div><br>
-      
-      
-    
-   
-   
-   
-      
-    <div class="row">
-    <div class="col" >   
-    <select class="form-select" aria-label="Default select example"class="lastInput">
-    <option selected  >Select Department</option>
-    <option value="1">Water Depo</option>
-    <option value="2">Electricity Depo</option>
-    <option value="3">Refuse Depo</option>
-    </select>
         
-    </div><br>
-    </div><br>
-    <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-primary" type="button" >Submit</button>
+    
+      <div class="col">
+        
+        <input type="text" id="accountNo" class="form-control" placeholder="Account No" formControlName="accountNo"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('accountNo').invalid && clientComplaintForm.get('accountNo').touched}">
+        <div *ngIf="clientComplaintForm.get('accountNo').hasError('required') && clientComplaintForm.get('accountNo').touched" class="invalid-feedback">
+            Account No is required.
+        </div>
+      </div>
+      </div><br>
+     
+    
+
+      <div class="row">
+      <div class="col">   
+        <input type="tel" id="standNo" class="form-control" placeholder="Stand No" formControlName="standNo"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('standNo').invalid && clientComplaintForm.get('standNo').touched}">
+        <div *ngIf="clientComplaintForm.get('standNo').hasError('required') && clientComplaintForm.get('standNo').touched" class="invalid-feedback">
+          Stand Number is required.
+        </div>
+      </div>
+  
+  
+  
+      <div class="col">
+        <input type="text" id="streetNoAndName" class="form-control" placeholder="Street No And Name" formControlName="streetNoAndName"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('streetNoAndName').invalid && clientComplaintForm.get('streetNoAndName').touched}">
+        <div *ngIf="clientComplaintForm.get('streetNoAndName').hasError('required') && clientComplaintForm.get('streetNoAndName').touched" class="invalid-feedback">
+            Street No And Name is Required.
+        </div>
+      </div>
+  </div><br>
+  
+
+  <div class="row">
+      <div class="col">
+        
+        <input type="text" id="clientComplaintNo" class="form-control" placeholder="Client Complaint No"  formControlName="clientComplaintNo"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('clientComplaintNo').invalid && clientComplaintForm.get('clientComplaintNo').touched}">
+        <div *ngIf="clientComplaintForm.get('clientComplaintNo').hasError('required') && clientComplaintForm.get('clientComplaintNo').touched" class="invalid-feedback">
+            Client Complaint No is Required
+        </div>
+      </div>
+  
+   
+  
+      <div class="col">
+      
+        <input type="text" id="township" class="form-control" placeholder="Township" formControlName="township"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('township').invalid && clientComplaintForm.get('township').touched}">
+        <div *ngIf="clientComplaintForm.get('township').hasError('required') && clientComplaintForm.get('township').touched" class="invalid-feedback">
+            Township is Required
+        </div>
+      </div>
+      </div><br>
+  
+
+      <div class="row">
+      <div class="col">
+      
+        <input type="text" id="initials" class="form-control" placeholder="Initials/Last Name" formControlName="initials"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('initials').invalid && clientComplaintForm.get('initials').touched}">
+        <div *ngIf="clientComplaintForm.get('initials').hasError('required') && clientComplaintForm.get('initials').touched" class="invalid-feedback">
+            Initials/Last Name is Required
+        </div>
+      </div><br>
+
+      <div class="col">
+       
+        <input type="text" id="title" class="form-control" placeholder="Title" formControlName="title"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('title').invalid && clientComplaintForm.get('title').touched}">
+        <div *ngIf="clientComplaintForm.get('title').hasError('required') && clientComplaintForm.get('title').touched" class="invalid-feedback">
+            Title is Required
+        </div>
+      </div>
+</div><br>
+
+<div class="row">
+      <div class="col">
+    
+        <input type="text" id="physicalAddress" class="form-control" placeholder="Address" formControlName="physicalAddress"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('physicalAddress').invalid && clientComplaintForm.get('physicalAddress').touched}">
+        <div *ngIf="clientComplaintForm.get('physicalAddress').hasError('required') && clientComplaintForm.get('physicalAddress').touched" class="invalid-feedback">
+          Physical Address is Required
+        </div>
       </div>
 
+      <div class="col">
+      
+        <input type="number" id="code" class="form-control" placeholder="Code" formControlName="code"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('code').invalid && clientComplaintForm.get('code').touched}">
+        <div *ngIf="clientComplaintForm.get('code').hasError('required') && clientComplaintForm.get('code').touched" class="invalid-feedback">
+         Code is Required
+        </div>
+      </div>
+      </div><br>
+  
 
-</form>
+      <div class="row">
+      <div class="col">
+       
+        <input type="text" id="area" class="form-control" placeholder="Area" formControlName="area"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('area').invalid && clientComplaintForm.get('area').touched}">
+        <div *ngIf="clientComplaintForm.get('area').hasError('required') && clientComplaintForm.get('area').touched" class="invalid-feedback">
+           Area is Required
+        </div>
+      </div>
+
+      <div class="col">
+      
+        <input type="email" id="email" class="form-control" placeholder="Email" formControlName="email"
+               [ngClass]="{'is-invalid': clientComplaintForm.get('email').invalid && clientComplaintForm.get('email').touched}">
+        <div *ngIf="clientComplaintForm.get('email').hasError('required') && clientComplaintForm.get('email').touched" class="invalid-feedback">
+           Email is Required
+        </div>
+      </div>
+      </div><br>
+      <div class="row">
+  <div class="col">
+    <select class="form-control" id="typeOfComplaint">
+      <option value="option">Select Type Of Complaint</option>
+      <option value="option1">Barriers damaged/missing</option>
+      <option value="option2">Blocked sewers</option>
+      <option value="option3">Blocked storm water drains</option>
+      <option value="option4">Cable theft</option>
+      <option value="option5">Electrical substations</option>
+      <option value="option6">Fallen tree obstructing traffic</option>
+      <option value="option7">Fire hydrants leaking</option>
+      <option value="option8">Faded road markings</option>
+      <option value="option9">Faulty water meters</option>
+      <option value="option10">Illegal connections</option>
+      <option value="option11">Incorrect water & Electricity billing</option>
+      <option value="option12">Road signs missing</option>
+      <option value="option13">Loose power cables</option>
+      <option value="option14">No water</option>
+      <option value="option15">Open distribution boxes</option>
+      <option value="option16">Road surfaces damaged</option>
+      <option value="option17">Potholes</option>
+      <option value="option18">Power failures</option>
+      <option value="option19">Street lights out</option>
+      <option value="option20">Soiled/smelling water</option>
+      <option value="option21">Spillage on road</option>
+      <option value="option22">Traffic lights damaged/out</option>
+      <option value="option23">Waste not removed</option>
+      <option value="option24">Water leakage</option>
+     
+  </select>
+  <br>
+</div>
+
+
+<div class="col">
+  <select class="form-control" id="departments">
+    <option>Select Department</option>
+    <option value="option1">Clearance</option>
+    <option value="option2">Credit Control</option>
+    <option value="option3">Customer Liason</option>
+    <option value="option4">Electricity Depo</option>
+    <option value="option5">Feedback Client</option>
+    <option value="option6">Finance</option>
+    <option value="option7">Housing/Rentals</option>
+    <option value="option8">Housing</option>
+    <option value="option9">Infrastructure</option>
+    <option value="option10">Roads And Works</option>
+    <option value="option11">Refunds</option>
+    <option value="option12">Refuse Depo</option>
+    <option value="option13">Revenue Services</option>
+    <option value="option14">Safety And Security</option>
+    <option value="option15">Solid Waste</option>
+    <option value="option16">Non Meter Office</option>
+    <option value="option17">Human Resources</option>
+    <option value="option18">Sundries</option>
+    <option value="option19">Town And Regional Planning</option>
+    <option value="option20">Parks</option>
+    <option value="option21">Licensing</option>
+    <option value="option22">Water Depo</option>
+    <option value="option23">Select Department</option>
+</select><br>
+</div>
+</div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="clientComplaintForm.invalid">Submit</button>
+        </div>
+        </div>
+    </form>
+    </div>

@@ -19,6 +19,7 @@ import { IAMComponent } from './iam/iam.component';
 import { ChangeAmbulanceDetailsComponent } from '@pages/change-ambulance-details/change-ambulance-details.component';
 import { LogIncidentComponent } from '@pages/log-incident/log-incident.component';
 import { AmbulanceDetailsComponent } from '@pages/ambulance-details/ambulance-details.component';
+import { ClientComplaintComponent } from '@pages/client-complaint/client-complaint.component';
 
 const routes: Routes = [
     {
@@ -61,6 +62,9 @@ const routes: Routes = [
             {
                 path:'ambulanceDetails/:taskId',component:AmbulanceDetailsComponent
             }, 
+        {
+            path:'clientsComplaints',component:ClientComplaintComponent
+        }
           
         ]
     },

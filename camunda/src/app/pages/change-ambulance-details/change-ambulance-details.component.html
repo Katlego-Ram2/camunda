@@ -1,0 +1,54 @@
+
+
+ <div class="container">
+  <form [formGroup]="ambulanceForm" (ngSubmit)="submitForm()" class="needs-validation" novalidate>
+    <h2> Change Details</h2><br>
+    <div class="form-group">
+      <label for="firstName">Driver First Name</label>
+      <input type="text" id="firstName" class="form-control" formControlName="firstName" [(ngModel)]="firstName" value="{{a['name']}}"
+             [ngClass]="{'is-invalid': ambulanceForm.get('firstName').invalid && ambulanceForm.get('firstName').touched}">
+      <div *ngIf="ambulanceForm.get('firstName').hasError('required')" class="invalid-feedback">
+        First Name is required.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="lastName">Driver Last Name</label>
+      <input type="text" id="lastName" class="form-control" formControlName="lastName" [(ngModel)]="lastName" value="{{a['last']}}"
+             [ngClass]="{'is-invalid': ambulanceForm.get('lastName').invalid && ambulanceForm.get('lastName').touched}">
+      <div *ngIf="ambulanceForm.get('lastName').hasError('required')" class="invalid-feedback">
+        Last Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contactNumber">Contact Number</label>
+      <input type="tel" id="contactNumber" class="form-control" formControlName="contactNumber" [(ngModel)]="contactNumber" value="{{a['num']}}"
+             [ngClass]="{'is-invalid': ambulanceForm.get('contactNumber').invalid && ambulanceForm.get('contactNumber').touched}">
+      <div *ngIf="ambulanceForm.get('contactNumber').hasError('required')" class="invalid-feedback">
+        Contact Number is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ambulanceColor">Ambulance Color</label>
+      <input type="text" id="ambulanceColor" class="form-control" formControlName="ambulanceColor" [(ngModel)]="ambulanceColor" value="{{a['amb']}}"
+             [ngClass]="{'is-invalid': ambulanceForm.get('ambulanceColor').invalid && ambulanceForm.get('ambulanceColor').touched}">
+      <div *ngIf="ambulanceForm.get('ambulanceColor').hasError('required')" class="invalid-feedback">
+      Ambulance Color is Required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="ambulanceRegistartion">Ambulance Registration</label>
+      <input type="text" id="ambulanceRegistartion" class="form-control" formControlName="ambulanceRegistartion" [(ngModel)]="ambulanceRegistartion" value="{{a['ambu']}}"
+             [ngClass]="{'is-invalid': ambulanceForm.get('ambulanceRegistartion').invalid && ambulanceForm.get('ambulanceRegistartion').touched}">
+      <div *ngIf="ambulanceForm.get('ambulanceRegistartion').hasError('required')" class="invalid-feedback">
+        Physical Address is Required
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="ambulanceForm.invalid">Update</button>
+  </form>
+</div>

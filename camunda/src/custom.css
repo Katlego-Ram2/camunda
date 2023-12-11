@@ -1,0 +1,112 @@
+.login-page {
+    background-image: linear-gradient(#265484, hwb(209.5 22.4% 56.1% / 0.65)), url(../src/assets/img/background-image/pexels-wendy-wei-1656663.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh; */
+}
+
+.register-page {
+    background-image: linear-gradient(#265484, hwb(209.5 22.4% 56.1% / 0.65)), url(../src/assets/img/background-image/pexels-wendy-wei-1656663.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 100vh; */
+}
+
+#aside_menu {
+    background-image: linear-gradient(#265484, hwb(209.5 22.4% 56.1% / 0.65)), url(../src/assets/img/background-image/camunda-logo-social-update.jpg); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+} 
+
+.register_title {
+    text-align: center;
+    padding: 6px 0px;
+}
+
+.login_title {
+    text-align: center;
+    padding: 6px 0px;
+}
+
+.term-paragraph {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.card-paragraph {
+    text-align: justify;
+    word-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    width: 96px;
+    height: 100px;
+}
+
+.welcome{
+    background-image: linear-gradient(#265484, hwb(209.5 22.4% 56.1% / 0.65)), url(../src/assets/img/background-image/camunda-logo-social-update.jpg); 
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #e9ecef;
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.bg-text {
+    /* background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4); */ 
+    color: white;
+    font-weight: bold;
+    /* border: 3px solid #f1f1f1; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+#product{
+    margin: 0 9%;
+    padding:5px;
+    clear:both;
+    height: auto;
+}
+#p_list{
+    width:200px;
+    max-width:200px;
+    /* height:260px; */
+    padding:5px;
+    /* border:1px solid #000; */
+    float:left;
+    margin:15px;
+}
+#p_list img{
+    height:150px; 
+    width:150px;
+}
+
+.step {
+    /*height: 11px;*/
+    /* width: 11px; */
+    margin: 4px 4px;
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    /*border-radius: 50%;*/
+    padding: 6px 20px;
+    /* opacity: 0.5; */
+}
+
+.filter {
+    margin: 8px 0px;
+}
