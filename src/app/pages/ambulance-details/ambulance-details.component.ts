@@ -99,7 +99,7 @@ export class AmbulanceDetailsComponent {
           if(response){
             console.log("Success!", response);
             this.router.navigate(["/process-instance/:id/:descriptionprocess-instance/Ambulance:7:70658821-851a-11ee-9dca-00090ffe0001/Ambulance"]);
-            window.location.reload();
+            // window.location.reload();
            
           }else{
             console.log("Error!");

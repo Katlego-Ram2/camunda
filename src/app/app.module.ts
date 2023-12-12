@@ -30,6 +30,7 @@ import { LogIncidentComponent } from '@pages/log-incident/log-incident.component
 import { AmbulanceDetailsComponent } from '@pages/ambulance-details/ambulance-details.component';
 import { NgModule } from '@angular/core';
 import { ClientComplaintComponent } from '@pages/client-complaint/client-complaint.component';
+import { MenuItemComponent } from './Components/menu-item/menu-item.component';
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -51,7 +52,8 @@ registerLocaleData(localeEn, 'en-EN');
         ChangeAmbulanceDetailsComponent ,
         LogIncidentComponent,
         AmbulanceDetailsComponent,
-        ClientComplaintComponent
+        ClientComplaintComponent,
+        MenuItemComponent
       
     ],
     imports: [
