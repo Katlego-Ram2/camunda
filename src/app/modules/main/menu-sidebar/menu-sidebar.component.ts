@@ -28,6 +28,7 @@ export class MenuSidebarComponent implements OnInit {
             this.classes = `${BASE_CLASSES} ${state.sidebarSkin}`;
         });
         this.user = this.appService.user;
+        
     }
 }
 
@@ -42,41 +43,31 @@ export const MENU = [
         iconClasses: 'fas fa-home',        
         children: [
             {
-                name: 'Customer Dashboard',
+                name: 'Camunda Dashboard',
                 iconClasses: 'far fa-circle',
                 path: ['/dashboard']
+            }
+        ]
+    },
+    {
+        name: 'Task List',
+        iconClasses: 'fas fa-list',        
+        children: [
+            {
+                name: 'Clients Complaint',
+                iconClasses: 'far fa-circle',
+                path: ['/']
             },
             {
-                name: 'Agent Dashboard',
-                iconClasses: 'far fa-circle',
-                path: ['/dashboard-agent']
+                name: 'Ambulance',
+                iconClasses: 'fas fa-ambulance',
+                path: ['/']
             }
         ]
     },
+    
     {
-        name: 'Sale Management',
-        iconClasses: 'fas fa-chart-area',        
-        children: [
-            {
-                name: 'Orders',
-                iconClasses: 'far fa-circle',
-                path: ['/orders']
-            }
-        ]
-    },
-    {
-        name: 'Product List',
-        iconClasses: 'fas fa-seedling',        
-        children: [
-            {
-                name: 'Products',
-                iconClasses: 'far fa-circle',
-                path: ['/product-list']
-            }
-        ]
-    },
-    {
-        name: 'Analytics',
+        name: 'Cockpit',
         iconClasses: 'fas fa-chart-pie',
     },
     /* {
@@ -84,41 +75,14 @@ export const MENU = [
         iconClasses: 'fas fa-truck', 
         path: ['/deliveries']
     }, */
-    {
-        name: 'Deliveries',
-        iconClasses: 'fas fa-truck',        
-        children: [
-            {
-                name: 'Request to Supply',
-                iconClasses: 'far fa-circle'
-            },
-            {
-                name: 'Accepted Deliveries',
-                iconClasses: 'far fa-circle',
-                path: ['/deliveries']
-            }  
-        ]
-    },
-    {
-        name: 'Inspections',
-        iconClasses: 'fas fa-user-check', 
-        path: ['/inspections']
-    },
+    
+    
     {
         name: 'Access Control',
         iconClasses: 'fas fa-user-shield', 
         path: ['/access-control']
     },
-    {
-        name: 'Goods Returns',
-        iconClasses: 'fas fa-exchange-alt',
-        path: ['/goods-returns']
-    },
-    {
-        name: 'Goods Receipts',
-        iconClasses: 'fas fa-receipt',
-        path: ['/goods-receipts']
-    },
+    
     {
         name: 'Reports',
         iconClasses: 'fas fa-file-export',
@@ -144,22 +108,22 @@ export const MENU = [
             }
         ]
     } */
-    {
-        name: 'Queries',
-        iconClasses: 'fas fa-envelope',        
-        children: [
-            {
-                name: 'View Queries',
-                iconClasses: 'far fa-circle',
-                path: ['/queries']
-            },
-            {
-                name: 'Send Query',
-                iconClasses: 'far fa-circle',
-                path: ['/query-compose']
-            } 
-        ]
-    }
+    // {
+    //     name: 'Queries',
+    //     iconClasses: 'fas fa-envelope',        
+    //     children: [
+    //         {
+    //             name: 'View Queries',
+    //             iconClasses: 'far fa-circle',
+    //             path: ['/queries']
+    //         },
+    //         {
+    //             name: 'Send Query',
+    //             iconClasses: 'far fa-circle',
+    //             path: ['/query-compose']
+    //         } 
+    //     ]
+    // }
     /* {
         name: 'Logout',
         iconClasses: 'fas fa-sign-out-alt',

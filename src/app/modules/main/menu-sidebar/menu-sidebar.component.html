@@ -33,12 +33,12 @@
         </div>
     </div> -->
 
-    <!-- <div class="form-inline">
+   <!-- <div class="form-inline">
         <app-sidebar-search></app-sidebar-search>
-    </div> -->
+    </div>  -->
 
     <!-- Sidebar Menu -->
-    <nav class="mt-2" style="overflow-y: hidden">
+    <nav class="mt-2" style="overflow-y: show">
         <ul
             class="nav nav-pills nav-sidebar flex-column"
             data-widget="treeview"
@@ -48,4 +48,19 @@
          
         </ul>
     </nav>
+
+ <nav class="mt-2" style="overflow-y: hidden">
+        <ul
+            class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false"
+        >
+            <app-menu-item
+                *ngFor="let item of menu"
+                [menuItem]="item"
+            ></app-menu-item>
+        </ul>
+    </nav> 
+ 
 </div>

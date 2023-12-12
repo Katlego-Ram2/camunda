@@ -46,7 +46,7 @@ export class ProcessInstancesComponent implements OnInit {
     (response) => {
       
       console.log('Instance deleted successfully', response);
-      
+      window.location.reload();
       // Optionally, you can reload the instances after deletion
       // this.loadInstances(id);
     },
@@ -67,8 +67,7 @@ suspendInstance(instanceId: string) {
   this.httpClient.post(apiUrl, suspendPayload, {responseType:'text'}).subscribe(
     (response) => {
       console.log('Instance suspended successfully', response);
-      // Optionally, you can reload the instances after suspension
-      // this.loadInstances(this.id);
+      window.location.reload();
     },
     (error) => {
       console.error('Error suspending instance', error);
@@ -104,6 +103,7 @@ restartInstance(instanceId: string) {
   this.httpClient.post(activateUrl, activatePayload).subscribe(
     (response) => {
       console.log('Instance activated successfully', response);
+      window.location.reload();
       // Optionally, you can reload the instances after suspension
       // this.loadInstances(this.id);
     },

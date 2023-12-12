@@ -44,6 +44,7 @@ export class LogIncidentComponent  {
     this.buttonClicked = true;
     if(this.ambulanceForm.valid){
       this.toastr.success('Success!');
+      window.location.reload();
       const data = {
         "variables":{
           "firstName": {"value":this.firstName},
@@ -64,6 +65,7 @@ export class LogIncidentComponent  {
       this.processData.postData(taskId, payload,url).subscribe({
         next: (response) => {
           console.log("Success!", response);
+          window.location.reload();
         },
         error: (error) => {
           console.log("Error!", error);

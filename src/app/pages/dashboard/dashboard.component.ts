@@ -53,6 +53,8 @@ export class DashboardComponent implements OnInit {
           this.instances = response;
         } else if (typeof response === 'string') {
           console.log(response);
+          window.location.reload();
+        
         } else {
           console.error("Unexpected response type:", response);
         }
@@ -62,13 +64,13 @@ export class DashboardComponent implements OnInit {
       }
     );
   
-    // Now you can check the description and navigate accordingly
-    if (description === 'Ambulance') {
-      // Navigate to the 'logincident' route
-      this.router.navigate(['/logincident']);
-    } else {
-      // Handle other processes as needed
-    }
+    // // Now you can check the description and navigate accordingly
+    // if (description === 'Ambulance') {
+    //   // Navigate to the 'logincident' route
+    //   this.router.navigate(['/logincident']);
+    // } else {
+    //   // Handle other processes as needed
+    // }
   }
   
 

@@ -29,7 +29,8 @@ import { ChangeAmbulanceDetailsComponent } from '@pages/change-ambulance-details
 import { LogIncidentComponent } from '@pages/log-incident/log-incident.component';
 import { AmbulanceDetailsComponent } from '@pages/ambulance-details/ambulance-details.component';
 import { NgModule } from '@angular/core';
-
+import { ClientComplaintComponent } from '@pages/client-complaint/client-complaint.component';
+import { MenuItemComponent } from './Components/menu-item/menu-item.component';
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -51,6 +52,9 @@ registerLocaleData(localeEn, 'en-EN');
         ChangeAmbulanceDetailsComponent ,
         LogIncidentComponent,
         AmbulanceDetailsComponent,
+        ClientComplaintComponent,
+        MenuItemComponent
+      
     ],
     imports: [
         ProfabricComponentsModule,
@@ -61,7 +65,7 @@ registerLocaleData(localeEn, 'en-EN');
         HttpClientModule,
         AppRoutingModule,
         ReactiveFormsModule,
-       
+        ToastrModule.forRoot(),
         BrowserAnimationsModule,
         ToastrModule.forRoot({
             timeOut: 3000,
